@@ -1,0 +1,16 @@
+
+Read Backend Assignment.pdf and then follow the instructions in planning_prompt.md exactly.
+Do not skip steps.
+Do not write code.
+
+README file with:
+Project overview
+Setup instructions
+Environment variables
+How to run locally
+API usage instructions
+Deployment instructions
+Working deployed application URL, if deployed.
+API documentation:
+Postman collection is required
+Swagger/OpenAPI is a bonus

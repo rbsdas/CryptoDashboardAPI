@@ -1,0 +1,6 @@
+@CryptoDashboardAPI_HostAddress = http://localhost:5052
+
+GET {{CryptoDashboardAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

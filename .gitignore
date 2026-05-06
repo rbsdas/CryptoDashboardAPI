@@ -1,0 +1,23 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.vscode/
+*.swp
+
+## Secrets — never commit
+appsettings.Development.json
+*.pfx
+*.p12
+
+## OS
+.DS_Store
+Thumbs.db
+
+## dotnet tools
+.config/dotnet-tools.json
+
+## Publish output
+publish/

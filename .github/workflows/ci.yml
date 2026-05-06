@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore
+        run: dotnet restore src/CryptoDashboardAPI/CryptoDashboardAPI.csproj
+
+      - name: Build
+        run: dotnet build src/CryptoDashboardAPI/CryptoDashboardAPI.csproj --no-restore -c Release
+
+      - name: Test
+        run: dotnet test src/CryptoDashboardAPI.Tests/CryptoDashboardAPI.Tests.csproj --no-build -c Release --verbosity minimal
+        env:
+          Jwt__Secret: ci-test-secret-key-at-least-32-chars!!
+          Jwt__Issuer: CryptoDashboardAPI
+          Jwt__Audience: CryptoDashboardAPI

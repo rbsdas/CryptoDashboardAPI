@@ -1,0 +1,192 @@
+Act as a senior backend system architect.
+
+You are helping with a programming home assignment. The goal is to design a clean, production-quality solution at an appropriate level of complexity (no overengineering).
+
+Task:
+````
+Backend Developer Home Assignment
+Objective
+Develop a mini backend application for a cryptocurrency dashboard.
+The application should expose an API that allows users to retrieve cryptocurrency data, manage a
+personal watchlist, and access historical price information.
+There is no requirement to build a user interface. The backend should provide the data that could later
+be displayed in a dashboard.
+Overview
+The application should allow users to:
+1. 
+2. 
+3. 
+4. 
+5. 
+View a dashboard-style list of current cryptocurrency rates.
+View detailed information for a specific cryptocurrency.
+Add cryptocurrencies to a personal watchlist.
+Persist the watchlist per authenticated user.
+Retrieve historical price data for selected cryptocurrencies.
+Backend Requirements
+The backend should include:
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+A clear API structure.
+User authentication.
+Persistent data storage.
+Integration with an external cryptocurrency data provider.
+Proper error handling and validation.
+Clean, readable, and maintainable code.
+You may choose any backend language, framework, database, ORM, query builder, or architectural
+style, as long as the project is well structured and the implementation is clear.
+Required Features
+API Endpoints
+The API should support at least the following capabilities:
+1. 
+2. 
+Get a list of cryptocurrencies.
+Get details of a single cryptocurrency.
+3. 
+4. 
+5. 
+6. 
+Add a cryptocurrency to the authenticated user’s watchlist.
+Retrieve the authenticated user’s watchlist.
+Refresh cryptocurrency data from an external provider.
+Retrieve historical price data for a selected cryptocurrency.
+
+Suggested routes:
+GET /api/cryptocurrencies
+GET /api/cryptocurrencies/:id
+POST /api/watchlist
+GET /api/watchlist
+POST /api/cryptocurrencies/refresh
+GET /api/cryptocurrencies/:id/history
+Additional routes may be added if they improve the platform functionality.
+
+Data Model
+The system should store cryptocurrency-related data with fields such as:
+name
+symbol
+externalProviderId
+currentPrice
+marketCap
+priceChangePercentage
+watchlistStatus / relation to user watchlist
+lastUpdatedAt
+You may add any additional fields that are useful for the application.
+
+External API Integration
+Use a known cryptocurrency data provider to fetch:
+1. 
+2. 
+3. 
+Current cryptocurrency rates.
+Details for a specific cryptocurrency.
+Historical price data.
+The system should include a way to refresh coin data from the external provider.
+
+Deployment - Bonus
+Deploy the backend application to any cloud or free hosting service.
+The README should include deployment instructions.
+Bonus points for adding a CI/CD pipeline using a common automation tool.
+
+Optional Bonuses
+1. 
+2. 
+3. 
+4. 
+API documentation using Swagger/OpenAPI or another documentation tool.
+Integration with an AI service that receives historical price data and returns a short analysis of a
+selected coin.
+CI/CD pipeline for automatic deployment.
+Additional useful endpoints or features that improve the platform.
+
+Deliverables
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+11. 
+12. 
+13. 
+14. 
+15. 
+16. 
+17. 
+Public GitHub repository with the source code.
+README file with:
+Project overview
+Setup instructions
+Environment variables
+How to run locally
+API usage instructions
+Deployment instructions
+Working deployed application URL, if deployed.
+API documentation:
+Postman collection is required
+Swagger/OpenAPI is a bonus
+A short video, up to 5 minutes, explaining:
+What was built
+Main features
+API demonstration
+Important technical decisions
+
+Requirements
+1. 
+2. 
+3. 
+4. 
+All API calls should work through Postman or a similar API client.
+The GitHub repository must be publicly accessible.
+The README should clearly explain how to run and test the project.
+The code should be readable, structured, and follow best practices.
+5. 
+6. 
+7. 
+The application should handle errors and edge cases gracefully.
+Configuration values such as API keys, secrets, and database connection strings must be
+managed using environment variables.
+The solution should be completed within 4 days.
+Submission
+Submit the assignment via the personal drive folder, including:
+1. 
+GitHub repository link.
+Good luck.
+````
+
+Constraints:
+- This is a time-limited home assignment (2-4 days)
+- Prioritize clarity, correctness, and simplicity
+- Avoid unnecessary complexity (no microservices, no over-architecting)
+
+Instructions:
+1. Do NOT write any code.
+2. First, produce a structured implementation plan.
+
+The plan must include:
+- System overview
+- Architecture (layers, components, responsibilities)
+- Data model (entities and relationships)
+- API design (routes and responsibilities)
+- External integrations (how and where they are handled)
+- Data flow for key operations
+- Error handling and edge cases
+- Step-by-step implementation plan (ordered by priority)
+
+3. Call out assumptions explicitly.
+4. Highlight tradeoffs and simplifications المناسبים למשימה.
+5. Keep the design clean and practical for a home assignment.
+
+IMPORTANT:
+- Do NOT include any code
+- Do NOT skip directly to implementation
+- If you include code, the response is invalid
+
+Stop after presenting the plan and wait for approval.
