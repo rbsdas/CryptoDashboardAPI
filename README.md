@@ -207,9 +207,44 @@ After deployment, Railway provides a public URL. The Swagger UI is available at 
 
 ---
 
+## Troubleshooting
+
+### Railway: DATABASE_URL Not Injected
+
+**Issue:** Migration fails at startup with empty connection string.
+
+**Cause:** Railway may have a timing issue injecting PostgreSQL environment variables before the app reads configuration.
+
+**Resolution:**
+1. Verify PostgreSQL plugin is added to your Railway project
+2. Check Railway dashboard → Variables tab — `DATABASE_URL` should be present
+3. Set `ConnectionStrings__DefaultConnection` explicitly to the value from the PostgreSQL plugin (don't rely on auto-injection)
+4. Redeploy with `railway up`
+
+If the issue persists, check Railway logs via `railway logs` for detailed error messages.
+
+---
+
 ## Postman Collection
 
 Import the file `CryptoDashboard.postman_collection.json` from the repo root to get a ready-to-use collection with all endpoints and example request bodies.
+
+### Collection Setup
+
+The collection uses **variables** for dynamic values:
+- **`baseUrl`** — defaults to `http://localhost:5052`; change to your Railway URL when deployed
+- **`token`** — starts empty; auto-populated by the Login request
+
+### Auto-Capture JWT
+
+The `Login` request includes a test script that automatically saves the JWT response to the `token` variable. Subsequent authenticated requests use `{{token}}` in the Authorization header without manual copy-paste.
+
+### Recommended Flow
+
+1. **Register** — create a test user
+2. **Login** — token auto-saves to collection variable
+3. **Refresh Coins** — populate the database from CoinGecko
+4. Use any other endpoint — token automatically injected
 
 ---
 
